@@ -116,8 +116,6 @@
   });
 
   var submitBtn = form.querySelector('button[type=submit]');
-  var shimmer = submitBtn.querySelector('.shimmer');
-  var sendIcon = submitBtn.querySelector('svg');
   var sendLabel = submitBtn.querySelector('span');
 
   var sendMessageIcon =
@@ -135,29 +133,23 @@
   function setSending(on) {
     submitBtn.disabled = on;
     if (on) {
-      submitBtn.classList.remove('bg-gradient-to-r', 'from-orange-600', 'to-orange-500',
-        'hover:from-orange-700', 'hover:to-orange-600', 'shadow-lg', 'hover:shadow-2xl',
-        'transform', 'hover:-translate-y-1');
-      submitBtn.classList.add('bg-gray-400', 'text-white', 'cursor-not-allowed');
-      if (shimmer) shimmer.classList.add('hidden');
+      submitBtn.classList.remove('bg-orange-600');
+      submitBtn.classList.add('bg-gray-400');
       setSpinnerIcon('<div class="h-5 w-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>');
       sendLabel.textContent = 'Sending...';
     }
   }
   function successState() {
-    submitBtn.classList.remove('bg-gray-400', 'cursor-not-allowed');
-    submitBtn.classList.add('bg-green-600', 'text-white');
+    submitBtn.classList.remove('bg-gray-400');
+    submitBtn.classList.add('bg-green-600');
     setSpinnerIcon(sentCheckIcon);
     sendLabel.textContent = 'Message Sent!';
   }
   function restoreButton() {
     clearAlert();
     submitBtn.disabled = false;
-    submitBtn.classList.remove('bg-green-600', 'bg-gray-400', 'text-white', 'cursor-not-allowed');
-    submitBtn.classList.add('bg-gradient-to-r', 'from-orange-600', 'to-orange-500',
-      'hover:from-orange-700', 'hover:to-orange-600', 'shadow-lg', 'hover:shadow-2xl',
-      'transform', 'hover:-translate-y-1');
-    if (shimmer) shimmer.classList.remove('hidden');
+    submitBtn.classList.remove('bg-green-600', 'bg-gray-400');
+    submitBtn.classList.add('bg-orange-600');
     setSpinnerIcon(sendMessageIcon);
     sendLabel.textContent = 'Send Message';
   }

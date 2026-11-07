@@ -1,0 +1,30 @@
+/* Clean-up overrides for the ych theme — linked last, after the compiled Tailwind stack */
+:root { --orange: #ea580c; --orange-dark: #c2410c; --orange-50: #fff7ed; --orange-100: #ffedd5; }
+
+.hero-soft { background-color: #faf7f2; }
+
+/* utilities the compiled stack doesn't have */
+.bg-orange-50 { background-color: var(--orange-50); }
+.border-orange-100 { border-color: var(--orange-100); }
+.hover\:bg-orange-700:hover { background-color: var(--orange-dark); }
+.hover\:bg-gray-700:hover { background-color: #374151; }
+.hover\:shadow-sm:hover { box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); }
+.hover\:shadow-md:hover { box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
+.hover\:shadow-lg:hover { box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); }
+
+/* nav link buttons: quiet default, orange on hover — the Contact Us CTA keeps white on orange */
+header nav .hidden.md\:flex button:not(.bg-orange-600) {
+  color: #374151;
+}
+header nav .hidden.md\:flex button:not(.bg-orange-600):hover { color: var(--orange); }
+header nav .hidden.md\:flex button.bg-orange-600 { color: #fff; white-space: nowrap; }
+
+/* px-5 / py-2 lost their spacing scale in the compiled stack — restate for the CTA */
+header nav button.bg-orange-600 { padding: 0.5rem 1.25rem; line-height: 1.5rem; }
+
+
+/* keep single-line CTA labels */
+#home button, #home .flex > a { white-space: nowrap; }
+#contact form button[type="submit"] { white-space: nowrap; }
+#contact form button[type="submit"]:disabled { pointer-events: none; }
+
