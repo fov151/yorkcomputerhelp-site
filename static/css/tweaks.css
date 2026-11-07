@@ -42,6 +42,10 @@ section.hero-soft .svc-mark { right: 16px; top: 10px; width: 120px; height: 120p
 /* utility the compiled stack lacks */
 .py-16 { padding-block: 4rem; }
 
+/* article card grids */
+@media (min-width: 768px) { .md-grid-2 { grid-column-gap: 1.5rem; grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .lg-grid-3 { grid-column-gap: 1.5rem; grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
 /* mobile-safe wrapping: area pills wrap, long contact lines break */
 .flex-wrap { flex-wrap: wrap; }
 .min-w-0 { min-width: 0; }
@@ -49,6 +53,19 @@ section.hero-soft .svc-mark { right: 16px; top: 10px; width: 120px; height: 120p
 body { overflow-x: hidden; }
 
 
+
+/* article prose styling (no .prose utilities in the compiled stack) */
+.prose { color: #4b5563; line-height: 1.75; }
+.prose p { margin-bottom: 1.25rem; }
+.prose h2 { font-size: 1.35rem; font-weight: 700; color: #111827; margin: 2rem 0 0.75rem; }
+.prose h3 { font-size: 1.1rem; font-weight: 600; color: #111827; margin: 1.5rem 0 0.5rem; }
+.prose ul, .prose ol { margin: 0 0 1.25rem 0; padding-left: 1.25rem; }
+.prose li { margin-bottom: 0.4rem; }
+.prose li::marker, .prose ol li::marker { color: #ea580c; }
+.prose a { color: #ea580c; text-decoration: underline; text-underline-offset: 2px; }
+.prose strong { color: #111827; font-weight: 600; }
+.prose blockquote { border-left: 3px solid var(--orange-100); padding-left: 1rem; color: #6b7280; font-style: italic; margin: 1.25rem 0; }
+.prose hr { border-color: #e5e7eb; margin: 2rem 0; }
 
 /* keep single-line CTA labels */
 #home button, #home .flex > a { white-space: nowrap; }
