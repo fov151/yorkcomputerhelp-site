@@ -23,6 +23,19 @@ header nav .hidden.md\:flex button.bg-orange-600 { color: #fff; white-space: now
 header nav button.bg-orange-600 { padding: 0.5rem 1.25rem; line-height: 1.5rem; }
 
 
+/* services cards: large ghosted icon in the top-right corner instead of a chip */
+.svc-mark {
+  position: absolute;
+  top: -34px;
+  right: -34px;
+  width: 68px;
+  height: 68px;
+  color: var(--orange);
+  opacity: 0.16;
+  pointer-events: none;
+}
+.svc-mark path, .svc-mark polygon, .svc-mark line, .svc-mark ellipse, .svc-mark circle, .svc-mark rect { stroke-width: 1.25; }
+
 /* keep single-line CTA labels */
 #home button, #home .flex > a { white-space: nowrap; }
 #contact form button[type="submit"] { white-space: nowrap; }
