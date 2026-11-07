@@ -11,3 +11,15 @@ disableHugoGeneratorInject = true
 
 [params]
   description = 'Expert computer repair, support and training for homes and businesses in York, Malton, Tadcaster and surrounding areas. Call 01904 943668.'
+
+[params.areas]
+  york = 'York'
+  malton = 'Malton'
+  tadcaster = 'Tadcaster'
+  poppleton = 'Poppleton'
+  haxby = 'Haxby'
+  dunnington = 'Dunnington'
+  rufforth = 'Rufforth'
+  sheriff-hutton = 'Sheriff Hutton'
+  strensall = 'Strensall'
+
