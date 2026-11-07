@@ -1,0 +1,29 @@
+{{ $area := slice "York" "Malton" "Tadcaster" "Poppleton" "Haxby" "Dunnington" "Rufforth" "Sheriff Hutton" "Strensall" }}
+{{ $schema := dict
+  "@context" "https://schema.org"
+  "@type" "LocalBusiness"
+  "@id" .Site.BaseURL
+  "name" "York Computer Help"
+  "legalName" "XNC Ltd"
+  "description" .Site.Params.description
+  "url" .Permalink
+  "telephone" "+441904943668"
+  "email" "help@yorkcomputerhelp.co.uk"
+  "image" (print .Site.BaseURL "og-image.png")
+  "priceRange" "££"
+  "address" (dict
+    "@type" "PostalAddress"
+    "streetAddress" "Heritage House, Murton Way, Osbaldwick"
+    "addressLocality" "York"
+    "postalCode" "YO19 5UW"
+    "addressRegion" "North Yorkshire"
+    "addressCountry" "GB")
+  "openingHoursSpecification" (slice
+    (dict "@type" "OpeningHoursSpecification" "dayOfWeek" (slice "Monday" "Tuesday" "Wednesday" "Thursday" "Friday") "opens" "09:00" "closes" "18:00")
+    (dict "@type" "OpeningHoursSpecification" "dayOfWeek" "Saturday" "opens" "10:00" "closes" "16:00"))
+  "areaServed" $area
+  "founder" (dict "@type" "Person" "name" "Nick")
+  "foundingDate" "2007"
+}}
+{{ if isset .Params "area_title" }}{{ $schema = merge $schema (dict "description" (printf "%s - %s" .Params.lead .Site.Params.description)) }}{{ end }}
+<script type="application/ld+json">{{ $schema | jsonify | safeJS }}</script>

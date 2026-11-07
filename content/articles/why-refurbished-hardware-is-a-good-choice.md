@@ -1,6 +1,6 @@
 ---
 title: 'Why refurbished hardware is a good choice'
-description: 'Used does not mean second-best when a machine has been checked, cleaned and wiped properly. Here is when we would recommend refurbished over new - and why you should be wary of anyone who does not wipe a drive.'
+description: 'A checked, wiped, properly refurbished machine is a fraction of the price of new - and often the sensible option. What refurbished should mean, and when to buy new.'
 date: 2026-11-07
 ---
 

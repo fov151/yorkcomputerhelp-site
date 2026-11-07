@@ -1,6 +1,6 @@
 ---
-title: "What's the purpose of a PC health check?"
-description: 'A PC health check is a scheduled once-over: storage, backups, updates, antivirus and wear. Here is what it involves and why it prevents the big problems from arriving unannounced.'
+title: "The purpose of a PC health check"
+description: 'What a PC health check is for: storage, drive health, tested backups, updates and antivirus. Catch the small stuff before it stops your computer working.'
 date: 2026-11-07
 ---
 

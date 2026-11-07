@@ -1,11 +1,26 @@
+{{ $title := "York Computer Help" }}
+{{ $desc := .Site.Params.description }}
+{{ if .IsHome }}
+  {{ $title = "Computer & Laptop Repair in York | York Computer Help" }}
+{{ else if .Title }}
+  {{ $title = printf "%s | York Computer Help" .Title }}
+{{ end }}
+{{ if isset .Params "description" }}{{ if ne .Params.description "" }}{{ $desc = .Params.description }}{{ end }}{{ end }}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ if .Title }}{{ .Title }} | York Computer Help{{ else }}York Computer Help{{ end }}</title>
-<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $desc }}">
+<link rel="canonical" href="{{ .Permalink }}">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<meta property="og:title" content="{{ if .Title }}{{ .Title }} | York Computer Help{{ else }}York Computer Help{{ end }}">
-<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-<meta property="og:type" content="website">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:type" content="{{ if eq .Section "articles" }}article{{ else }}website{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:image" content="/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $desc }}">
+<meta name="twitter:image" content="/og-image.png">
 <link rel="stylesheet" href="/css/style.css?v=1">
 <link rel="stylesheet" href="/css/tweaks.css?v=17">
