@@ -51,6 +51,7 @@ section.hero-soft .svc-mark { right: 16px; top: 10px; width: 120px; height: 120p
 .min-w-0 { min-width: 0; }
 .break-words { overflow-wrap: break-word; }
 body { overflow-x: hidden; }
+.mt-16 { margin-top: 4rem; }
 
 
 
