@@ -42,6 +42,13 @@ section.hero-soft .svc-mark { right: 16px; top: 10px; width: 120px; height: 120p
 /* utility the compiled stack lacks */
 .py-16 { padding-block: 4rem; }
 
+/* mobile-safe wrapping: area pills wrap, long contact lines break */
+.flex-wrap { flex-wrap: wrap; }
+.min-w-0 { min-width: 0; }
+.break-words { overflow-wrap: break-word; }
+body { overflow-x: hidden; }
+
+
 
 /* keep single-line CTA labels */
 #home button, #home .flex > a { white-space: nowrap; }
