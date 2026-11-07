@@ -11,11 +11,6 @@
     var menu = document.getElementById('mobile-menu');
     if (menu && !menu.classList.contains('hidden')) menu.classList.add('hidden');
   });
-  var logo = document.querySelector('header nav .cursor-pointer');
-  if (logo) logo.addEventListener('click', function () {
-    var el = document.getElementById('home');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  });
 
   // --- mobile menu toggle ---
   var burger = document.querySelector('header button.md\\:hidden');
