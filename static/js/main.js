@@ -2,15 +2,26 @@
 (function () {
   'use strict';
 
-  // --- smooth-scroll nav buttons ---
+  // --- smooth-scroll nav buttons (fall back to home anchors off the home page) ---
   document.addEventListener('click', function (e) {
     var btn = e.target.closest('[data-goto]');
     if (!btn) return;
-    var el = document.getElementById(btn.getAttribute('data-goto'));
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    var id = btn.getAttribute('data-goto');
+    var el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = '/#' + id;
+    }
     var menu = document.getElementById('mobile-menu');
     if (menu && !menu.classList.contains('hidden')) menu.classList.add('hidden');
   });
+
+  // --- honour #hash navigation (native hash scroll is unreliable on this SPA clone) ---
+  if (location.hash) {
+    var target = document.getElementById(location.hash.slice(1));
+    if (target) setTimeout(function () { target.scrollIntoView({ behavior: 'smooth' }); }, 60);
+  }
 
   // --- mobile menu toggle ---
   var burger = document.querySelector('header button.md\\:hidden');

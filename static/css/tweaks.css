@@ -76,3 +76,6 @@ body { overflow-x: hidden; }
 #contact form button[type="submit"] { white-space: nowrap; }
 #contact form button[type="submit"]:disabled { pointer-events: none; }
 
+
+/* sections land below the fixed header when scrolled to */
+section[id] { scroll-margin-top: 4.5rem; }
