@@ -1,0 +1,13 @@
+baseURL = 'https://yorkcomputerhelp.co.uk/'
+languageCode = 'en-gb'
+title = 'York Computer Help'
+theme = 'ych'
+publishDir = 'public'
+disableKinds = ['taxonomy', 'term', 'rss']
+disableHugoGeneratorInject = true
+
+[build]
+  writeStats = false
+
+[params]
+  description = 'Expert computer repair, support and training for homes and businesses in York, Malton, Tadcaster and surrounding areas. Call 01904 943668.'
