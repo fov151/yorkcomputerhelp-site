@@ -3,6 +3,11 @@
 
 .hero-soft { background-color: #faf7f2; }
 
+/* desktop hero breathing room (lg:py-* utilities not in the compiled stack) */
+@media (min-width: 1024px) {
+  #home > .max-w-7xl, section.hero-soft > .max-w-7xl { padding-block: 6rem; }
+}
+
 /* utilities the compiled stack doesn't have */
 .bg-orange-50 { background-color: var(--orange-50); }
 .border-orange-100 { border-color: var(--orange-100); }
