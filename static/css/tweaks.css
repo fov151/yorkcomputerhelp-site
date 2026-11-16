@@ -84,3 +84,6 @@ body { overflow-x: hidden; }
 
 /* sections land below the fixed header when scrolled to */
 section[id] { scroll-margin-top: 4.5rem; }
+
+/* single-line CTA labels on the article CTA strips */
+.nowrap { white-space: nowrap; }
