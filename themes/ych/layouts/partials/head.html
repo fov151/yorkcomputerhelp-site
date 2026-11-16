@@ -11,7 +11,7 @@
 <title>{{ $title }}</title>
 <meta name="description" content="{{ $desc }}">
 <link rel="canonical" href="{{ .Permalink }}">
-<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="robots" {{ if .Params.noindex }}content="noindex, nofollow"{{ else }}content="index, follow, max-image-preview:large"{{ end }}>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta property="og:title" content="{{ $title }}">
 <meta property="og:description" content="{{ $desc }}">
